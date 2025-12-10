@@ -29,4 +29,4 @@ Download Gerber and/or order details from files
 ## Useful links
 - [controlling display with arduino](https://simple-circuit.com/arduino-interface-with-st7789-color-tft-display/)
 - [datasheet for display](https://www.lcsc.com/datasheet/C5329582.pdf)
-- [arduino uno as ISP for ATMEGA328](https://www.instructables.com/Program-ATmega-328-Using-Arduino-Arduino-As-ISP/)
+- [arduino uno as ISP for ATMEGA328](https://www.brennantymrak.com/articles/programming-avr-with-arduino)
