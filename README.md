@@ -16,6 +16,11 @@ Each board contains:
 - [IC Socket for ATMEGA328](https://www.lcsc.com/product-detail/C72125.html)
 - [FFC Connector for display](https://www.lcsc.com/product-detail/C2911796.html)
 
+## Steps
+1. Program Arduino UNO as ISP using ArduinoISP sketch (make sure board/ports are set to UNO)
+2. Download and install ATMEGA328P breadboard info from [here](https://www.arduino.cc/en/uploads/Tutorial/breadboard-1-6-x.zip), extract breadboard folder and save in Documents/Arduino/hardware 
+
+
 ## Wiring diagram
 <img width="1169" height="801" alt="Schematic_gameboy-christmas-project-with-ATMEGA328-and-MF128128F15-BFW_2025-11-28 (1)" src="https://github.com/user-attachments/assets/aa6ddc54-6d85-485a-8880-c6faa561b981" />
 
