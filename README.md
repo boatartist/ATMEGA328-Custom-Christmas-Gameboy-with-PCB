@@ -1,7 +1,7 @@
 # ATMEGA328-Custom-Christmas-Gameboy-with-PCB
-For Christmas every year, I try to make each member of my family something unique, showing off my technical ability and giving them something personalised. However, as I get older and my skills improve, the time taken to make an original gift for all 7+ members of my close family increases exponentially. Instead, I thought I might try making everyone the same thing this year, and customising the product to fit their tastes. I landed on a gameboy-style Arduino-based console, possibly with only one game each, with unique 3D-printed enclosures and different games to match each person. Because I'm cheap, we will not be using reliable and standard OLED displays and an Arduino Nano or similar, instead I've gone for an obscure TFT-LCD from Digikey and an ATMEGA328-PU chip to achieve the same goals.
+For Christmas every year, I try to make each member of my family something unique, showing off my technical ability and giving them something personalised. However, as I get older and my skills improve, the time taken to make an original gift for all 7+ members of my close family increases exponentially. Instead, I thought I might try making everyone the same thing this year, and customising the product to fit their tastes. I landed on a gameboy-style Arduino-based console, possibly with only one game each, with unique 3D-printed enclosures and different games to match each person. Because I'm cheap, we will not be using reliable and standard OLED displays and an Arduino Nano or similar, instead I've gone for an obscure TFT-LCD from Digikey and an ATMEGA328-PU chip to achieve the same goals. 
 
-Of course, there will also be a custom PCB (with factory PCB assembly because my soldering iron is rubbish) to house the display, buttons and microcontroller. 
+Of course, there will also be a custom PCB (with factory PCB assembly because my soldering iron is rubbish) to house the display, buttons and microcontroller. And, of course, I have hugely overestimated my own knowledge and gone down an extreme rabbit-hole of fuse-bits and ISPs and oscillators thinking I'd broken the chips. If you're using Arduino ISP, be warned because it will cause a ridiculous amount of problems.
 
 ## Parts
 All links to where I ordered from (I ordered for 10 modules), which came out to about AUD$250 with shipping, PCB and assembly, but the parts themselves are the cheapest I could find. Probably shouldn't have ordered from 3 separate sources lol, but the $25 each is still cheaper than any existing product. 
@@ -16,13 +16,27 @@ Each board contains:
 - [IC Socket for ATMEGA328](https://www.lcsc.com/product-detail/C72125.html)
 - [FFC Connector for display](https://www.lcsc.com/product-detail/C2911796.html)
 
-## Steps
-1. Program Arduino UNO as ISP using ArduinoISP sketch (make sure board/ports are set to UNO)
-2. Download and install ATMEGA328P breadboard info from [here](https://www.arduino.cc/en/uploads/Tutorial/breadboard-1-6-x.zip), extract breadboard folder and save in Documents/Arduino/hardware 
+## Steps to program using [ISP](https://www.jaycar.com.au/duinotech-isp-programmer-for-arduino-and-avr/p/XC4627)
+1. Set up ISP (In-System Programmer) according to [manual](https://media.jaycar.com.au/product/resources/XC4627_manualMain_86841.pdf), configuring with latest version of USB-ASP
+2. Install [AVRDUDESS](https://atmega32-avr.com/avrdudess-a-gui-for-avrdude/) and set fuses and settings to match screenshots exactly <img width="48%" alt="Screenshot 2026-01-20 201009" src="https://github.com/user-attachments/assets/fda23e06-e2b7-4ff5-ad47-5f209b41e5d3" /> <img width="48%" alt="Screenshot 2026-01-20 201035" src="https://github.com/user-attachments/assets/0052f110-f100-463f-8074-0a927ebc9984" />
+3. Download gameboy_snake.hex file and select it to be flashed
+4. Wire ATMega328 on breadboard to connect to ISP pins
+  
+  | ISP Pin       | ATMega328 Pin |
+  | ------------- | ------------- |
+  | MISO          | 18            |
+  | MOSI          | 17            |
+  | SCK           | 19            |
+  | RST           | 1             |
+  | VCC           | 7             |
+  | GND           | 8             |
 
+5. Hit **Program** on AVRDUDESS and watch code flash to the chip
+6. Disconnect ATMega328 from breadboard and plug into PCB, attach batteries and enjoy! 
 
 ## Wiring diagram
-<img width="1169" height="801" alt="Schematic_gameboy-christmas-project-with-ATMEGA328-and-MF128128F15-BFW_2025-11-28 (1)" src="https://github.com/user-attachments/assets/aa6ddc54-6d85-485a-8880-c6faa561b981" />
+<img width="80%" alt="Schematic_gameboy-christmas-project-with-ATMEGA328-and-MF128128F15-BFW_2026-01-20" src="https://github.com/user-attachments/assets/2bc8a225-e846-402b-89ed-e3aa4a16fd92" />
+
 
 
 ## PCB
