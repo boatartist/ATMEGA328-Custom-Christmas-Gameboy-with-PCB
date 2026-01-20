@@ -67,7 +67,7 @@ void menu() {
 }
 
 void snake() {
-  int size = 12;
+  int size = 8; //change to 12 or equivalent for larger gameplay
   int x = size*8;
   int y = size*10 + 20;
   bool running = true;
