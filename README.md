@@ -1,4 +1,8 @@
 # ATMEGA328-Custom-Christmas-Gameboy-with-PCB
+
+<img width="50%" alt="image" src="https://github.com/user-attachments/assets/25a4902f-af54-41db-98f3-9f36e4f8e87c" />
+
+
 For Christmas every year, I try to make each member of my family something unique, showing off my technical ability and giving them something personalised. However, as I get older and my skills improve, the time taken to make an original gift for all 7+ members of my close family increases exponentially. Instead, I thought I might try making everyone the same thing this year, and customising the product to fit their tastes. I landed on a gameboy-style Arduino-based console, possibly with only one game each, with unique 3D-printed enclosures and different games to match each person. Because I'm cheap, we will not be using reliable and standard OLED displays and an Arduino Nano or similar, instead I've gone for an obscure TFT-LCD from Digikey and an ATMEGA328-PU chip to achieve the same goals. 
 
 Of course, there will also be a custom PCB (with factory PCB assembly because my soldering iron is rubbish) to house the display, buttons and microcontroller. And, of course, I have hugely overestimated my own knowledge and gone down an extreme rabbit-hole of fuse-bits and ISPs and oscillators thinking I'd broken the chips. If you're using Arduino ISP, be warned because it will cause a ridiculous amount of problems.
